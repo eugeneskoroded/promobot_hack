@@ -41,7 +41,7 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
             - NVIDIA_DRIVER_CAPABILITIES=compute,utility
             - PYTHONUNBUFFERED=1
           ports:
-            - "АДРЕС.ВАШЕГО.ДЕПЛОЙ.СЕРВЕРА:ПОРТ2:8081"
+            - "81.94.159.128:8081:8081"
         gpt_server:
           image: gpt_server
           stdin_open: true

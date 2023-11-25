@@ -14,7 +14,7 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
 
 2) GPT-Server
 * Зайти в папку [gpt-server](prod/gpt-server)
-* Запустить команду: `docker build -t gpt-server .`
+* Запустить команду: `docker build -t gpt_server .`
 
 3) React App
 * Зайти в папку [react_app](prod/react_app)

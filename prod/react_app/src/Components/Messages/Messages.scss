@@ -1,0 +1,9 @@
+@import 'src/shared/styles/variables.scss';
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: $grid-base;
+  padding: $grid-medium $grid-medium 0 $grid-medium;
+}

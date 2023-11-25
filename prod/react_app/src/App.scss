@@ -1,0 +1,35 @@
+@import "src/shared/styles/variables";
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.promobot-container {
+  height: 60%;
+  width: 700px;
+  gap: $grid-giant;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius-medium;
+  background-color: $white-color;
+  padding: $grid-giant;
+  overflow: hidden;
+  box-shadow: $box-shadow-around;
+
+  @media screen and (max-width: $bp-md) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: $bp-sm) {
+    width: 90%;
+    height: 90%;
+  }
+
+  @media screen and (max-width: $bp-xs) {
+    width: 100%;
+    height: calc(100% - ($grid-giant * 2));
+  }
+}

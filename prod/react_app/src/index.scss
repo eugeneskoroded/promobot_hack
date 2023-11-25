@@ -1,0 +1,25 @@
+@import "shared/styles/variables";
+
+:root {
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-normal;
+  line-height: $line-height;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+body {
+  background-color: white;
+}
+
+[hidden] {
+  display: none !important;
+}

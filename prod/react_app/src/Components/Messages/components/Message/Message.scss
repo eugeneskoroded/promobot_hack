@@ -1,0 +1,93 @@
+@import "src/shared/styles/variables.scss";
+
+.message-base {
+  display: flex;
+  gap: $grid-tiny;
+  position: relative;
+}
+
+.user-message {
+  @extend .message-base;
+  align-self: flex-end;
+  justify-content: flex-end;
+
+  .message-with-sender {
+    align-items: flex-end;
+  }
+}
+
+.bot-message {
+  @extend .message-base;
+  align-self: flex-start;
+  justify-content: flex-end;
+
+  .message-with-sender {
+    align-items: flex-start;
+    padding-bottom: 3px;
+  }
+}
+
+.message-with-sender {
+  display: flex;
+  flex-direction: column;
+  gap: $grid-tiny;
+  align-items: flex-end;
+}
+
+.message-container {
+  border-radius: $border-radius-giant;
+  padding: $grid-small;
+  display: flex;
+  flex-direction: column;
+  gap: $grid-tiny;
+}
+
+.user {
+  align-self: end;
+  background-color: $promobot-color;
+  color: $white-color;
+  border-bottom-right-radius: 0;
+}
+
+.bot {
+  align-self: start;
+  color: $promobot-black-color;
+  background-color: $light-gray-color;
+  border-bottom-left-radius: 0;
+
+}
+
+.promobot-message {
+  display: flex;
+  flex-direction: column;
+  gap: $grid-small;
+
+
+  .message {
+    color: $promobot-black-color;
+  }
+}
+
+.message {
+  white-space: pre-line;
+  word-break: break-word;
+  font-weight: $font-weight-big;
+  font-size: $font-size-big;
+  color: $white-color;
+
+}
+
+
+
+.topic-text {
+  font-weight: $font-weight-bold;
+}
+
+.portrait-icon {
+  bottom: -4px;
+  position: relative;
+  color: $promobot-color;
+  height: 32px !important;
+  width: 32px !important;
+  align-self: flex-end;
+}

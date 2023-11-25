@@ -18,6 +18,27 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
 
 3) React App
 * Зайти в папку [react_app](prod/react_app)
+* Заменить адрес сервера в файле [index.ts](prod/react_app/src/api/index.ts)
+## Это должно выглядеть так:
+```javascript
+  import axios from "axios";
+  import { IMessage } from "../shared/types";
+  
+  const axiosInstance = axios.create({
+    baseURL: "http://АДРЕС.ВАШЕГО.ДЕПЛОЙ.СЕРВЕРА:ПОРТ2",
+  });
+  
+  export const sendMessage = async (
+    message: string,
+    withAiAssistant: boolean,
+  ): Promise<IMessage> => {
+    const { data } = await axiosInstance.post<IMessage>("/send_message", {
+      message,
+      withAiAssistant,
+    });
+    return data;
+  };
+```
 * Запустить команду: `docker build -t react_app .`
 
 4) В папке проекта [prod](prod)
@@ -41,7 +62,7 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
             - NVIDIA_DRIVER_CAPABILITIES=compute,utility
             - PYTHONUNBUFFERED=1
           ports:
-            - "81.94.159.128:8081:8081"
+            - "АДРЕС.ВАШЕГО.ДЕПЛОЙ.СЕРВЕРА:ПОРТ2:8081"
         gpt_server:
           image: gpt_server
           stdin_open: true
@@ -57,7 +78,7 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
           volumes:
             - /home/ubuntu/projects/volume:/user/volume
           ports:
-            - 0.0.0.0:8082:8082
+            - АДРЕС.ВАШЕГО.ДЕПЛОЙ.СЕРВЕРА:ПОРТ3:8082
   ```
 * Запустить команду: `docker compose up` из папки [prod](prod)
 

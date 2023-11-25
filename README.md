@@ -17,7 +17,7 @@ WEB-приложение: [http://81.94.159.11:8080](http://81.94.159.128:8080/)
 * Запустить команду: `docker build -t gpt-server .`
 
 3) React App
-* Зайти в папку react_app
+* Зайти в папку [react_app](prod/react_app)
 * Запустить команду: `docker build -t react_app .`
 
 4) В папке проекта prod запустить команду: `docker compose up`
